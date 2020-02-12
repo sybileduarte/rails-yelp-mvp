@@ -14,8 +14,11 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.restaurant_id = params[:restaurant_id]
-    @review.save!
-    redirect_to restaurant_path(@review.restaurant_id)
+    if @review.save!
+      redirect_to restaurant_path(@review.restaurant_id)
+    else
+      redirect_to new_restaurant_review_path(review_params)
+    end
   end
 
   def edit

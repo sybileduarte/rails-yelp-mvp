@@ -2,7 +2,7 @@
   <h2 class = "card-title"><%= @restaurant.name %></h2>
   <p class = "card-subtitle"> Address:  <%= @restaurant.address %> </p>
   <p class="card-text">Food Type:  <%= @restaurant.category %></p>
-  <p class="card-text"> <%= @restaurant.reviews%></p>
+  <p class="card-text"> <%= @restaurant.reviews.first%></p>
   <p><%= link_to "Add a Review", new_restaurant_review_path(@restaurant) %></p>
   <p><%= link_to "Back to list", restaurants_path  %></p>
 </div>
