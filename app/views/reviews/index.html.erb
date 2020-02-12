@@ -1,0 +1,7 @@
+<h1>Reviews</h1>
+
+<% @Reviews.each do |review| %>
+  <h4><%= review.content %></h4>
+  <p>  <%= "*" * review.rating %> </p>
+<% end %>
+
